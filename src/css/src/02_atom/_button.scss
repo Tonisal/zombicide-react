@@ -1,0 +1,54 @@
+.a-btn {
+  padding: 1.5rem;
+  color: $white;
+  border: $border-style $orange;
+  transition: color $transition-style, border-color $transition-style, background-color $transition-style;
+
+  &.a-btn--primary {
+    color: $white;
+    border: $border-style $orange;
+    background-color: $orange;
+
+    &:hover {
+      color: $orange;
+      border: $border-style $white;
+      background-color: $white;
+    }
+  }
+
+  &.a-btn--centered {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &.a-btn--close {
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    transition: transform $transition-style;
+
+    span {
+      display: inline-block;
+      width: 3rem;
+      height: 0.5rem;
+      background-color: $red;
+      position: absolute;
+      left: 0;
+
+      &:first-child {
+        transform: rotate(45deg);
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

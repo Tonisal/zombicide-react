@@ -1,0 +1,29 @@
+.m-modal {
+  background-color: $purple;
+  padding: 5rem;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  .m-modal__button-container {
+    display: flex;
+
+    .a-input {
+      flex-grow: 2;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    list-style-type: upper-roman;
+    text-transform: capitalize;
+  }
+
+  .a-btn--close {
+    margin-left: auto;
+  }
+
+}
+
