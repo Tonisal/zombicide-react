@@ -1,0 +1,21 @@
+.o-player-stats {
+  display: flex;
+
+  ul {
+    padding-left: 0;
+  }
+
+  .o-player-stats__user {
+    flex-grow: 1;
+    border: 0.1rem solid $black;
+    text-align: center;
+  }
+
+  .o-player-stats__character {
+    display: flex;
+
+    li {
+      flex-grow: 1;
+    }
+  }
+}

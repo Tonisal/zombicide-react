@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PlayerList from './PlayerList.js';
+import StartGameButton from './StartGameButton';
 
 
 class StartGameModal extends Component {
@@ -9,15 +11,19 @@ class StartGameModal extends Component {
     /*Get value from search input and save them into state*/
     handleValueChange = (e) => {
         this.setState({playerToAdd: e.target.value});
-        console.log(this.state);
     };
 
-    handleFormSubmit = (e) => {
+    /*Get value from search input which will get saved in state in the highest component*/
+    addPlayer = (e) => {
         e.preventDefault();
-        this.props.test(this.state.playerToAdd);
+        this.props.addPlayer(this.state.playerToAdd);
 
     };
 
+    removePlayer = (e) => {
+        const playerToRemove = e;
+        this.props.removePlayer(playerToRemove);
+    };
 
 
     render() {
@@ -28,22 +34,15 @@ class StartGameModal extends Component {
                     <h2>Füge Spieler hinzu</h2>
                     <p className="u-text-center">Bitte füge nicht zweimal den gleichen Namen ins Spiel hinzu.</p>
                     <div className="m-modal__button-container">
-                        <form onSubmit={this.handleFormSubmit}>
+                        <form onSubmit={this.addPlayer}>
                             <input className="a-input" id="addPlayerValue" type="text" onChange={this.handleValueChange}
                                    placeholder="Spielername" required/>
                             <button type="submit" className="a-btn a-btn--primary" id="addPlayer">Spieler hinzufügen
                             </button>
                         </form>
                     </div>
-                    <ol id="playersList">
-                        {this.props.players}
-                    </ol>
-                    <p className="u-hide js-players-info">Mit <span className="js-amount-players"></span> Spieler
-                        steuert
-                        jeder Spieler <span className="js-amount-chars"></span> Charaktere</p>
-                    <button className="a-btn a-btn--primary a-btn--centered js-toggleButton js-start-Game u-hide">Spiel
-                        starten
-                    </button>
+                    <PlayerList players={this.props.players} removePlayer={this.removePlayer}/>
+                    <StartGameButton players={this.props.players}/>
                 </div>
             </div>
         );

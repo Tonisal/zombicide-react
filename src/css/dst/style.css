@@ -270,6 +270,9 @@ summary {
 template {
   display: none; }
 
+li {
+  list-style: none; }
+
 h1 {
   text-align: center;
   font-size: 3rem; }
@@ -339,21 +342,18 @@ h2 {
   .m-modal .a-btn--close {
     margin-left: auto; }
 
-.m-player-card {
-  background-color: #792877; }
-  .m-player-card .m-player-card__characters-container {
-    display: flex; }
-  .m-player-card .m-player-card__character {
-    flex-grow: 1;
-    background-color: green;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: center; }
-  .m-player-card .m-player-card__inventory {
-    display: flex;
-    flex-wrap: wrap; }
-  .m-player-card .m-player-card__item {
-    flex-basis: 50%; }
-
 .o-header {
   display: flex; }
+
+.o-player-stats {
+  display: flex; }
+  .o-player-stats ul {
+    padding-left: 0; }
+  .o-player-stats .o-player-stats__user {
+    flex-grow: 1;
+    border: 0.1rem solid #000;
+    text-align: center; }
+  .o-player-stats .o-player-stats__character {
+    display: flex; }
+    .o-player-stats .o-player-stats__character li {
+      flex-grow: 1; }
